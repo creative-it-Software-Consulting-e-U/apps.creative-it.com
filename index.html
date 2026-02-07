@@ -275,6 +275,14 @@
     .app-icon.emerald { background: rgba(52,211,153,0.12); color: var(--accent-emerald); }
     .app-icon.amber   { background: rgba(251,191,36,0.12); color: var(--accent-amber); }
 
+    .app-icon-img {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
     .app-name {
       font-family: var(--font-body);
       font-size: 1.1rem;
@@ -288,6 +296,17 @@
       font-weight: 300;
       flex-grow: 1;
     }
+    .app-badge {
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-sky);
+      border: 1px solid rgba(56,189,248,0.2);
+      border-radius: 100px;
+      padding: 0.3rem 0.9rem;
+      background: rgba(56,189,248,0.06);
+      width: fit-content;
+    }
     .app-link-row {
       display: flex;
       align-items: center;
@@ -298,7 +317,7 @@
       text-transform: uppercase;
       transition: color 0.2s;
     }
-    .app-card:hover .app-link-row {
+    a.app-card:hover .app-link-row {
       color: var(--accent-sky);
     }
     .app-link-row svg {
@@ -306,7 +325,7 @@
       height: 14px;
       transition: transform 0.2s;
     }
-    .app-card:hover .app-link-row svg {
+    a.app-card:hover .app-link-row svg {
       transform: translateX(3px);
     }
 
@@ -347,31 +366,6 @@
     }
     .footer-links a:hover {
       color: var(--text-primary);
-    }
-
-    /* ---- Empty state ---- */
-    .empty-state {
-      text-align: center;
-      padding: 4rem 2rem;
-      opacity: 0;
-      animation: cardIn 0.6s ease 0.2s forwards;
-    }
-    .empty-icon {
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      opacity: 0.5;
-    }
-    .empty-state p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-    /* Hide empty state when apps exist */
-    .apps-grid:not(:empty) ~ .empty-state {
-      display: block;
-    }
-    .apps-grid a ~ .empty-state,
-    .apps-grid:has(a) ~ .empty-state {
-      display: none;
     }
 
     /* ---- Responsive ---- */
@@ -423,32 +417,32 @@
 
         <div class="apps-grid">
 
-          <!-- ============================================
-               ADD NEW APPS HERE
-               Copy this template for each new app:
-
-          <a href="https://appname.creative-it.com" class="app-card">
-            <div class="app-icon sky">
-              <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">...</svg>
-            </div>
-            <div class="app-name">App Name</div>
-            <div class="app-desc">Short description of what the app does.</div>
+          <a href="https://geohook.creative-it.com" class="app-card">
+            <img src="geohook-icon.svg" alt="GeoHook" class="app-icon-img">
+            <div class="app-name">GeoHook</div>
+            <div class="app-desc">Trigger webhooks automatically when you enter or exit locations. Connect your geofences to Home Assistant, IFTTT, n8n, or any custom API.</div>
             <div class="app-link-row">
               Open app
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
             </div>
           </a>
 
-               Icon color classes: sky, violet, emerald, amber
-               ============================================ -->
-
-        </div>
-
-        <div class="empty-state">
-          <div class="empty-icon">
-            <svg viewBox="0 0 24 24" width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+          <div class="app-card">
+            <img src="ainvoicemate-icon.png" alt="AInvoiceMate" class="app-icon-img">
+            <div class="app-name">AInvoiceMate</div>
+            <div class="app-desc">AI-powered invoice processing for your accounting workflow. Scan invoices, extract data automatically, and export to sevDesk, DATEV, Google Sheets, and more.</div>
+            <div class="app-badge">Coming Soon</div>
           </div>
-          <p>New apps will appear here as they launch.</p>
+
+          <div class="app-card">
+            <img src="flowagent-icon.png" alt="FlowAgent" class="app-icon-img">
+            <div class="app-name">FlowAgent</div>
+            <div class="app-desc">Automated bookkeeping and financial management built for Austrian tax law. AI-powered invoice processing, transaction tracking, and cash flow forecasting.</div>
+            <div class="app-badge">Coming Soon</div>
+          </div>
+
+          <!-- Add more apps here -->
+
         </div>
       </div>
     </section>
