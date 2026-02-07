@@ -7,25 +7,26 @@
   <meta name="description" content="Software crafted by Creative IT. Explore our collection of apps built to solve real problems with elegant design.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
     :root {
-      --bg-deep: #060a12;
-      --bg-surface: #0c1220;
-      --bg-card: #111b2e;
-      --border-subtle: rgba(148, 163, 184, 0.08);
-      --border-hover: rgba(56, 189, 248, 0.25);
-      --text-primary: #edf2f7;
-      --text-secondary: #8896ab;
-      --text-muted: #4a5568;
-      --accent-sky: #38bdf8;
-      --accent-violet: #a78bfa;
+      --navy: #030520;
+      --surface: #0F1132;
+      --card: #0D1025;
+      --navy-light: #181B39;
+      --navy-mid: #24274C;
+      --border: rgba(255, 255, 255, 0.08);
+      --off-white: #F5F5F7;
+      --text-secondary: #B6BDE2;
+      --text-muted: #8F96BD;
+      --purple: #A163F1;
+      --indigo: #6363F1;
+      --cyan: #23F0C3;
       --accent-emerald: #34d399;
       --accent-amber: #fbbf24;
-      --font-display: 'Instrument Serif', Georgia, serif;
-      --font-body: 'DM Sans', system-ui, sans-serif;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
 
     html {
@@ -35,11 +36,38 @@
     }
 
     body {
-      font-family: var(--font-body);
-      background: var(--bg-deep);
-      color: var(--text-primary);
+      font-family: var(--font-sans);
+      background: var(--navy);
+      color: var(--off-white);
       line-height: 1.6;
       overflow-x: hidden;
+    }
+
+    /* ---- Scrollbar ---- */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--navy);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--navy-mid);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--navy-light);
+    }
+
+    /* ---- Selection ---- */
+    ::selection {
+      background: var(--indigo);
+      color: white;
+    }
+
+    /* ---- Focus states ---- */
+    :focus-visible {
+      outline: 2px solid var(--indigo);
+      outline-offset: 2px;
     }
 
     /* ---- Ambient background ---- */
@@ -57,7 +85,7 @@
       height: 900px;
       top: -300px;
       right: -200px;
-      background: radial-gradient(circle, rgba(56,189,248,0.07) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(161, 99, 241, 0.04) 0%, transparent 70%);
       animation: drift 20s ease-in-out infinite alternate;
     }
     .ambient::after {
@@ -67,7 +95,7 @@
       height: 700px;
       bottom: -100px;
       left: -200px;
-      background: radial-gradient(circle, rgba(167,139,250,0.05) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(35, 240, 195, 0.03) 0%, transparent 70%);
       animation: drift 25s ease-in-out infinite alternate-reverse;
     }
     @keyframes drift {
@@ -82,8 +110,8 @@
       z-index: 0;
       pointer-events: none;
       background-image:
-        linear-gradient(rgba(148,163,184,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(148,163,184,0.03) 1px, transparent 1px);
+        linear-gradient(rgba(182, 189, 226, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(182, 189, 226, 0.03) 1px, transparent 1px);
       background-size: 60px 60px;
       mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 100%);
       -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, black 20%, transparent 100%);
@@ -114,23 +142,23 @@
       align-items: center;
       gap: 0.6rem;
       text-decoration: none;
-      color: var(--text-primary);
+      color: var(--off-white);
     }
     .logo-mark {
       width: 32px;
       height: 32px;
       border-radius: 8px;
-      background: linear-gradient(135deg, var(--accent-sky), var(--accent-violet));
+      background: linear-gradient(135deg, var(--purple), var(--indigo));
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-display);
+      font-family: var(--font-sans);
       font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--bg-deep);
+      font-weight: 700;
+      color: white;
     }
     .logo-text {
-      font-family: var(--font-body);
+      font-family: var(--font-sans);
       font-size: 0.9rem;
       font-weight: 500;
       letter-spacing: 0.04em;
@@ -144,10 +172,10 @@
       color: var(--text-secondary);
       text-decoration: none;
       letter-spacing: 0.02em;
-      transition: color 0.2s;
+      transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .nav-link:hover {
-      color: var(--text-primary);
+      color: var(--off-white);
     }
 
     /* ---- Hero ---- */
@@ -160,25 +188,25 @@
       font-size: 0.75rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--accent-sky);
-      border: 1px solid rgba(56,189,248,0.2);
+      color: var(--purple);
+      border: 1px solid rgba(99, 99, 241, 0.2);
       border-radius: 100px;
       padding: 0.4rem 1.2rem;
       margin-bottom: 2.5rem;
-      background: rgba(56,189,248,0.04);
+      background: rgba(99, 99, 241, 0.1);
     }
     .hero h1 {
-      font-family: var(--font-display);
-      font-weight: 400;
+      font-family: var(--font-sans);
+      font-weight: 800;
       font-size: clamp(2.8rem, 6vw, 4.8rem);
       line-height: 1.1;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
       margin-bottom: 1.5rem;
-      color: var(--text-primary);
+      color: var(--off-white);
     }
     .hero h1 em {
-      font-style: italic;
-      background: linear-gradient(135deg, var(--accent-sky), var(--accent-violet));
+      font-style: normal;
+      background: linear-gradient(135deg, #A163F1 0%, #6363F1 40%, #23F0C3 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -189,14 +217,14 @@
       max-width: 520px;
       margin: 0 auto;
       line-height: 1.7;
-      font-weight: 300;
+      font-weight: 400;
     }
 
     /* ---- Divider ---- */
     .divider {
       border: none;
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border-subtle) 20%, var(--border-subtle) 80%, transparent);
+      background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
       margin: 2rem 0;
     }
 
@@ -211,9 +239,10 @@
       margin-bottom: 3rem;
     }
     .section-title {
-      font-family: var(--font-display);
+      font-family: var(--font-sans);
       font-size: 1.6rem;
-      font-weight: 400;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
     .section-count {
       font-size: 0.8rem;
@@ -230,8 +259,8 @@
     }
     .app-card {
       position: relative;
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
+      background: var(--surface);
+      border: 1px solid var(--border);
       border-radius: 16px;
       padding: 2rem;
       text-decoration: none;
@@ -239,11 +268,12 @@
       display: flex;
       flex-direction: column;
       gap: 1.2rem;
-      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.03);
       /* entrance animation */
       opacity: 0;
       transform: translateY(24px);
-      animation: cardIn 0.6s ease forwards;
+      animation: cardIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
     .app-card:nth-child(1) { animation-delay: 0.15s; }
     .app-card:nth-child(2) { animation-delay: 0.25s; }
@@ -255,9 +285,9 @@
     }
 
     .app-card:hover {
-      border-color: var(--border-hover);
+      border-color: rgba(255, 255, 255, 0.12);
       transform: translateY(-4px);
-      box-shadow: 0 20px 60px -12px rgba(0,0,0,0.5), 0 0 0 1px rgba(56,189,248,0.1);
+      box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.03), 0 20px 60px -12px rgba(0,0,0,0.5), 0 0 0 1px rgba(99, 99, 241, 0.1);
     }
 
     .app-icon {
@@ -270,8 +300,8 @@
       font-size: 1.5rem;
       flex-shrink: 0;
     }
-    .app-icon.sky     { background: rgba(56,189,248,0.12); color: var(--accent-sky); }
-    .app-icon.violet  { background: rgba(167,139,250,0.12); color: var(--accent-violet); }
+    .app-icon.purple  { background: rgba(161, 99, 241, 0.12); color: var(--purple); }
+    .app-icon.indigo  { background: rgba(99, 99, 241, 0.12); color: var(--indigo); }
     .app-icon.emerald { background: rgba(52,211,153,0.12); color: var(--accent-emerald); }
     .app-icon.amber   { background: rgba(251,191,36,0.12); color: var(--accent-amber); }
 
@@ -284,7 +314,7 @@
     }
 
     .app-name {
-      font-family: var(--font-body);
+      font-family: var(--font-sans);
       font-size: 1.1rem;
       font-weight: 600;
       letter-spacing: -0.01em;
@@ -293,18 +323,18 @@
       font-size: 0.9rem;
       color: var(--text-secondary);
       line-height: 1.65;
-      font-weight: 300;
+      font-weight: 400;
       flex-grow: 1;
     }
     .app-badge {
       font-size: 0.75rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--accent-sky);
-      border: 1px solid rgba(56,189,248,0.2);
+      color: var(--purple);
+      border: 1px solid rgba(99, 99, 241, 0.2);
       border-radius: 100px;
       padding: 0.3rem 0.9rem;
-      background: rgba(56,189,248,0.06);
+      background: rgba(99, 99, 241, 0.1);
       width: fit-content;
     }
     .app-link-row {
@@ -315,15 +345,15 @@
       color: var(--text-muted);
       letter-spacing: 0.03em;
       text-transform: uppercase;
-      transition: color 0.2s;
+      transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
     a.app-card:hover .app-link-row {
-      color: var(--accent-sky);
+      color: var(--cyan);
     }
     .app-link-row svg {
       width: 14px;
       height: 14px;
-      transition: transform 0.2s;
+      transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
     a.app-card:hover .app-link-row svg {
       transform: translateX(3px);
@@ -331,7 +361,7 @@
 
     /* ---- Footer ---- */
     footer {
-      border-top: 1px solid var(--border-subtle);
+      border-top: 1px solid var(--border);
       padding: 3rem 0;
       margin-top: 2rem;
     }
@@ -349,10 +379,10 @@
     .footer-left a {
       color: var(--text-secondary);
       text-decoration: none;
-      transition: color 0.2s;
+      transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .footer-left a:hover {
-      color: var(--text-primary);
+      color: var(--off-white);
     }
     .footer-links {
       display: flex;
@@ -362,10 +392,10 @@
       font-size: 0.82rem;
       color: var(--text-muted);
       text-decoration: none;
-      transition: color 0.2s;
+      transition: color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
     .footer-links a:hover {
-      color: var(--text-primary);
+      color: var(--cyan);
     }
 
     /* ---- Responsive ---- */
